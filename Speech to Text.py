@@ -27,12 +27,12 @@ def recording(audio_file):
  with sr.AudioFile(audio_file) as source:
     r.adjust_for_ambient_noise(source)
     audio = r.listen(source,timeout=1,phrase_time_limit=10)
-    print('Done, Please wait while we are processing what you said...')
+    print('Done, Please wait while we are processing audio...')
     try:
         text = r.recognize_google(audio)
         print("Audio in Recording is : {}".format(text))
     except:
-        print("Sorry we could not recognize what you said. You can try again.")
+        print("Sorry we could not recognize what is in audio. You can try again.")
         
 
 
